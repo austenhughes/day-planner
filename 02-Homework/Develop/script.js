@@ -31,7 +31,7 @@ $(document).ready(function() {
         });
 
     $(".Btn6am").on("click", function(){
-        var textarea = $(".textare6am").val();
+        var textarea = $(".textarea6am").val();
         localStorage.setItem("newTask6am" , textarea);
         console.log(textarea)
         });
@@ -146,6 +146,19 @@ $(document).ready(function() {
 
     loadPage ();
     function loadPage (){
+
+        setday();
+        function setday() {
+        var day = moment().format("MMMM Do YYYY");
+        var displayDay = document.createElement('div');
+        displayDay.textContent = day
+        $("#currentDay").append(displayDay);
+        }
+
+        checkTime ();
+        function checkTime(){
+        }
+
       var getTask12pm = localStorage.getItem("newTask12pm");
       var getTask11pm = localStorage.getItem("newTask11pm");
       var getTask10pm = localStorage.getItem("newTask10pm");
@@ -171,7 +184,6 @@ $(document).ready(function() {
       var getTask2am = localStorage.getItem("newTask2am");
       var getTask1am = localStorage.getItem("newTask1am");
       
-        console.log(getTask12am);
         $(".textarea12pm").text(getTask12pm);
         $(".textarea1pm").text(getTask1pm);
         $(".textarea2pm").text(getTask2pm);
