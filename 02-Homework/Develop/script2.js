@@ -157,21 +157,6 @@ $(document).ready(function() {
 
         checkTime ();
         function checkTime(){
-            var getTime = moment().format("LT");
-            console.log(getTime);
-            var setTime = moment().format("LT")
-            console.log(setTime);
-
-            if (getTime === setTime){
-                console.log("time is now");
-                $(".time-block12").addClass("present");
-            } else if (getTime < setTime){
-                $(".time-block12").addClass("past")
-            } else if (getTime > setTime){
-                $(".time-block12").addClass("future") 
-            }
-
-            }
         }
 
       var getTask12pm = localStorage.getItem("newTask12pm");
@@ -223,9 +208,11 @@ $(document).ready(function() {
         $(".textarea9am").text(getTask9am);
         $(".textarea10am").text(getTask10am);
         $(".textarea11am").text(getTask11am);
-    })
+    }
 
-    
-    // color code time blocks based on realtime hrs
-    
+    //make work for all time blocks
+    // color code time blocks based on reatime hrs
+    // display day and time
+    // clear page and or clear task 
 
+})
